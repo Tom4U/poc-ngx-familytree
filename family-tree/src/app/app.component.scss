@@ -25,29 +25,55 @@
     flex: 2;
     overflow: auto;
 
-    .trees {
-      .tree {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
+    .tree {
+      min-width: calc($tree-person-width * 4 + $tree-link-size * 2);
 
-        .tree-item {
+      .name {
+        & > * {
+          height: $tree-person-height;
+          width: $tree-person-width;
+          line-height: $tree-person-height;
           background-color: $tree-bg;
+          border-radius: 10px;
+          text-align: center;
+          margin: 0 auto;
+        }
+      }
 
-          & > * {
-            float: left;
-            width: 200px;
-            height: 50px;
-            text-align: center;
-            line-height: 50px;
-            cursor: default;
-          }
+      .person, .parent, .parent-link, .name {
+        float: left;
+        width: 100%;
+      }
+
+      .parent-link {
+        height: calc($tree-link-size * 2);
+
+        .parent-line {
+          border-left: $tree-link;
+          border-right: $tree-link;
+          border-bottom: $tree-link;
+          height: $tree-link-size;
+          width: 50%;
+          margin: 0 auto;
         }
 
-        .tree-link.updown {
-          border-left: 2px solid black;
-          height: 50px;
+        .child-to-parent {
+          position: relative;
+          left: 50%;
+          margin-right: 50%;
+          border-left: $tree-link;
+          height: $tree-link-size;
+        }
+      }
+
+      .parent {
+        .person {
+          width: 50%;
+        }
+
+        .parent-link, .name {
+          width: 90%;
+          margin: 0 auto;
         }
       }
     }
