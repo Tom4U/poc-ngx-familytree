@@ -1,0 +1,63 @@
+@import 'src/theme';
+
+.app-container {
+  max-width: 95vw;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  overflow: hidden;
+  font-size: $default-font-size;
+  font-family: $default-font;
+  padding: 2.5vh 2.5vw;
+
+  .app-header {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2em;
+    font-family: $title-font;
+  }
+
+  .app-content {
+    flex: 2;
+    overflow: auto;
+
+    .trees {
+      .tree {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        .tree-item {
+          background-color: $tree-bg;
+
+          & > * {
+            float: left;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            cursor: default;
+          }
+        }
+
+        .tree-link.updown {
+          border-left: 2px solid black;
+          height: 50px;
+        }
+      }
+    }
+  }
+
+  .app-footer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
