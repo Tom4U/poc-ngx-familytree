@@ -3,3 +3,5 @@ Next:
     ✔ feat(basic): Anwendungsname ist family-tree @done(22-06-08 13:26)
     ✔ feat(basic): Anwendungstitel ist Stammbaum @done(22-06-08 15:04)
     ✔ feat(basic): Als App Design gemäß Wireframe umsetzen @done(22-06-08 15:04)
+    ☐ refactor: Personen im Component Controller definieren
+    ☐ refactor: Personen als Schleife im Template (View) ausgeben
