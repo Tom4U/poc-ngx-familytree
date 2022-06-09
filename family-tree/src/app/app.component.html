@@ -4,70 +4,36 @@
   </header>
   <main class="app-content">
     <section class="tree">
-      <section class="person">
-        <section class="parent">
-          <section class="person">
-            <section class="parent">
-              <section class="person">
-                <section class="parent-link">
-                </section>
-                <section class="name">
-                  <p>Oma</p>
-                </section>
-              </section>
-              <section class="person">
-                <section class="parent-link">
-                </section>
-                <section class="name">
-                  <p>Opa</p>
-                </section>
-              </section>
-            </section>
-            <section class="parent-link">
-              <div class="parent-line"></div>
-              <div class="child-to-parent"></div>
-            </section>
-            <section class="name">
-              <p>Mutter</p>
-            </section>
-          </section>
-          <section class="person">
-            <section class="parent">
-              <section class="person">
-                <section class="parent-link">
-                </section>
-                <section class="name">
-                  <p>Oma</p>
-                </section>
-              </section>
-              <section class="person">
-                <section class="parent-link">
-                </section>
-                <section class="name">
-                  <p>Opa</p>
-                </section>
-              </section>
-            </section>
-            <section class="parent-link">
-              <div class="parent-line"></div>
-              <div class="child-to-parent"></div>
-            </section>
-            <section class="name">
-              <p>Vater</p>
-            </section>
-          </section>
-        </section>
-        <section class="parent-link">
-          <div class="parent-line"></div>
-          <div class="child-to-parent"></div>
-        </section>
-        <section class="name">
-          <p>Kind</p>
-        </section>
-      </section>
+      <ng-container [ngTemplateOutlet]="personTemplate" [ngTemplateOutletContext]="{person}"></ng-container>
     </section>
   </main>
   <footer class="app-footer">
     <p>&copy; 2022 by me :)</p>
   </footer>
 </div>
+
+<ng-template #parentsTemplate let-mother="mother" let-father="father">
+  <section class="parents">
+    <section class="parent">
+      <ng-container [ngTemplateOutlet]="personTemplate" [ngTemplateOutletContext]="{person: mother}"></ng-container>
+      <ng-container [ngTemplateOutlet]="personTemplate" [ngTemplateOutletContext]="{person: father}"></ng-container>
+    </section>
+    <section class="parent-link">
+      <div class="parent-line"></div>
+      <div class="child-to-parent"></div>
+    </section>
+  </section>
+</ng-template>
+
+<ng-template #personTemplate let-person="person">
+  <section class="person">
+    <ng-container
+      *ngIf="person.hasParents()"
+      [ngTemplateOutlet]="parentsTemplate"
+      [ngTemplateOutletContext]="{mother: person.getMother(), father: person.getFather()}">
+    </ng-container>
+    <section class="name">
+      <p>{{person}}</p>
+    </section>
+  </section>
+</ng-template>
