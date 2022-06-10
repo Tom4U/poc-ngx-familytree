@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
-import { Person } from './person.class';
+import { Person } from './components/tree/person.class';
+import { PersonService } from './components/tree/person.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-  person: Person = new Person("", "");
-
-  constructor() {
+  constructor(private personSvc: PersonService) {
     this.generatePerson();
   }
 
@@ -26,7 +25,7 @@ export class AppComponent {
       this.getPerson("Granpa", "Feuerstein", this.getPerson("V", "N"), this.getPerson("Urgoßvater", "Feuerstein")),
     );
 
-    this.person = this.getPerson("Pebbles", "Feuerstein",mother, father);
+    this.personSvc.selectPerson(this.getPerson("Pebbles", "Feuerstein",mother, father));
 
   }
 

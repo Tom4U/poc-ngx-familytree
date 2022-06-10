@@ -1,0 +1,24 @@
+@import 'src/theme';
+
+.name {
+  float: left;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: $tree-person-height;
+  min-width: $tree-person-width;
+  background-color: $tree-bg;
+  border-radius: 10px;
+  word-break: break-word;
+
+  & > * {
+    text-align: center;
+    padding: 5px;
+  }
+}
+
+.app-parents {
+  float: left;
+  width: 100%;
+}

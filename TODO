@@ -5,4 +5,4 @@ Next:
     ✔ feat(basic): Als App Design gemäß Wireframe umsetzen @done(22-06-08 15:04)
     ✔ refactor: Personen im Component Controller definieren @done(22-06-09 13:19)
     ✔ refactor: Personen als Schleife im Template (View) ausgeben @done(22-06-09 13:19)
-    ☐ refactor: AppComponent in unterschiedliche Components umbauen
+    ✔ refactor: AppComponent in unterschiedliche Components umbauen @done(22-06-10 13:51)

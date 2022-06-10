@@ -1,6 +1,6 @@
 @import 'src/theme';
 
-.app-container {
+.app-master-layout {
   max-width: 95vw;
   height: 95vh;
   display: flex;
@@ -11,84 +11,4 @@
   font-size: $default-font-size;
   font-family: $default-font;
   padding: 2.5vh 2.5vw;
-
-  .app-header {
-    flex: 1;
-    max-height: 2em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 2em;
-    font-family: $title-font;
-  }
-
-  .app-content {
-    flex: 2;
-    overflow: auto;
-
-    .tree {
-      .name {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        min-height: $tree-person-height;
-        min-width: $tree-person-width;
-        background-color: $tree-bg;
-        border-radius: 10px;
-        word-break: break-word;
-
-        & > * {
-          text-align: center;
-          padding: 5px;
-        }
-      }
-
-      .person, .parent, .parent-link, .name {
-        float: left;
-        width: 100%;
-      }
-
-      .parent-link {
-        height: calc($tree-link-size * 2);
-
-        .parent-line {
-          border-left: $tree-link;
-          border-right: $tree-link;
-          border-bottom: $tree-link;
-          height: $tree-link-size;
-          margin: 0 15%;
-        }
-
-        .child-to-parent {
-          position: relative;
-          left: 50%;
-          margin-right: 50%;
-          border-left: $tree-link;
-          height: $tree-link-size;
-        }
-      }
-
-      .parents {
-        float: left;
-      }
-
-      .parent {
-        display: flex;
-        align-items: flex-end;
-
-        .person:nth-child(1n+2) {
-          margin-left: 10px;
-        }
-      }
-    }
-  }
-
-  .app-footer {
-    flex: 1;
-    max-height: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-  }
 }

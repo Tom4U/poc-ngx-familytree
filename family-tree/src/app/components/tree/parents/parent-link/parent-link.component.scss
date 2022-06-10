@@ -1,0 +1,17 @@
+@import 'src/theme';
+
+.parent-line {
+  border-left: $tree-link;
+  border-right: $tree-link;
+  border-bottom: $tree-link;
+  height: $tree-link-size;
+  margin: 0 15%;
+}
+
+.child-to-parent {
+  position: relative;
+  left: 50%;
+  margin-right: 50%;
+  border-left: $tree-link;
+  height: $tree-link-size;
+}

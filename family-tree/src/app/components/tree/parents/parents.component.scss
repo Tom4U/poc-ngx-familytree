@@ -1,0 +1,23 @@
+@import 'src/theme';
+
+.app-parent-link {
+  height: calc($tree-link-size * 2);
+  float: left;
+  width: 100%;
+}
+
+.parent {
+  .app-person {
+    float: left;
+    width: 100%;
+  }
+
+  float: left;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+
+  .app-person:nth-child(1n+2) {
+    margin-left: 10px;
+  }
+}
