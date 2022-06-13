@@ -1,4 +1,5 @@
-<section class="app-parents" *ngIf="person?.hasParents()" [mother]="mother" [father]="father"></section>
+<section class="app-parents" *ngIf="person?.hasParents()" (showParentsForm)="showParentsForm.emit($event)" [mother]="mother" [father]="father"></section>
 <section class="name">
-  <p>{{person}}</p>
+  <span class="name-field">{{person}}</span>
+  <span class="add-field" title="Eltern hinzufügen" *ngIf="!person?.hasParents()" (click)="showParentsForm.emit(person)">&plus;</span>
 </section>

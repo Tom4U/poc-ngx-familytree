@@ -1,0 +1,14 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="form">
+  <section class="form-group">
+    <label for="firstname">Vorname</label>
+    <input type="text" formControlName="firstname" id="firstname">
+  </section>
+  <section class="form-group">
+    <label for="lastname">Nachname</label>
+    <input type="text" formControlName="lastname" id="lastname">
+  </section>
+  <section class="buttons">
+    <input type="submit" value="Speichern" [disabled]="!maySubmit()">
+    <input type="reset" value="Abbrechen" (click)="close.emit()">
+  </section>
+</form>

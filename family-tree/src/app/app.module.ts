@@ -10,6 +10,9 @@ import { PersonComponent } from './components/tree/person/person.component';
 import { ParentsComponent } from './components/tree/parents/parents.component';
 import { ParentLinkComponent } from './components/tree/parents/parent-link/parent-link.component';
 import { MasterLayoutComponent } from './layout/master-layout/master-layout.component';
+import { PersonFormComponent } from './components/tree/person-form/person-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ParentsFormComponent } from './components/tree/parents-form/parents-form.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +24,14 @@ import { MasterLayoutComponent } from './layout/master-layout/master-layout.comp
     PersonComponent,
     ParentsComponent,
     ParentLinkComponent,
-    MasterLayoutComponent
+    MasterLayoutComponent,
+    PersonFormComponent,
+    ParentsFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

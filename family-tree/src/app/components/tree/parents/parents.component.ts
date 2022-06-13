@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Person } from '../person.class';
 
 @Component({
@@ -8,4 +8,7 @@ import { Person } from '../person.class';
 })
 export class ParentsComponent {
   @Input() mother!: Person;
-  @Input() father!: Person;}
+  @Input() father!: Person;
+
+  @Output() showParentsForm = new EventEmitter<Person>();
+}

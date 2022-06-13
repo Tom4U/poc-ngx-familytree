@@ -1,0 +1,11 @@
+<section *ngIf="selectedPerson && !showForms" class="app-person" [person]="selectedPerson" (showParentsForm)="addParents($event)"></section>
+<section *ngIf="!selectedPerson && !showForms" class="no-person">
+  <p>Bitte füge eine Person hinzu!</p>
+  <button class="add-button" (click)="addPerson()">Person erstellen</button>
+</section>
+<section class="form" *ngIf="showForm">
+  <app-person-form (close)="showForm = false"></app-person-form>
+</section>
+<section class="form" *ngIf="showParentsForm">
+  <app-parents-form (close)="showParentsForm = false" [person]="childForParentForm"></app-parents-form>
+</section>

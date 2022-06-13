@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Person } from './components/tree/person.class';
 import { PersonService } from './components/tree/person.service';
 
@@ -7,9 +7,11 @@ import { PersonService } from './components/tree/person.service';
   templateUrl: './app.component.html',
   styleUrls: ['app.component.scss']
 })
-export class AppComponent {
-  constructor(private personSvc: PersonService) {
-    this.generatePerson();
+export class AppComponent implements OnInit {
+  constructor(private personSvc: PersonService) {}
+
+  ngOnInit(): void {
+    //this.generatePerson();
   }
 
   private generatePerson() {
@@ -25,7 +27,7 @@ export class AppComponent {
       this.getPerson("Granpa", "Feuerstein", this.getPerson("V", "N"), this.getPerson("Urgoßvater", "Feuerstein")),
     );
 
-    this.personSvc.selectPerson(this.getPerson("Pebbles", "Feuerstein",mother, father));
+    this.personSvc.updatePerson(this.getPerson("Pebbles", "Feuerstein",mother, father));
 
   }
 

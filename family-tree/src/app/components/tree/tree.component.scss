@@ -1,4 +1,30 @@
+@import 'src/theme';
+
 .app-person {
   float: left;
   width: 100%;
+}
+
+.no-person {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+
+  & > * {
+    font-size: 1.25rem;
+    line-height: 2.5rem;
+  }
+
+  & > .add-button {
+    background-color: $tree-bg;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: lighten($tree-bg, 5);
+    }
+  }
 }

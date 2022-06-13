@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Person } from '../person.class';
 
 @Component({
@@ -7,7 +7,10 @@ import { Person } from '../person.class';
   styleUrls: ['./person.component.scss']
 })
 export class PersonComponent implements OnInit {
-  @Input() person!: Person;
+  @Input() person!: Person | null;
+
+  @Output() showParentsForm = new EventEmitter<Person | null>();
+
   mother: Person = new Person("Unbekannt", "");
   father: Person = new Person("Unbekannt", "");
 

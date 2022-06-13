@@ -1,0 +1,32 @@
+<h2>Eltern für {{person}} hinzufügen</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <fieldset formGroupName="mother">
+    <legend>Name der Mutter</legend>
+    <input type="hidden" formControlName="id">
+    <section class="form-group">
+      <label for="firstname">Vorname</label>
+      <input type="text" formControlName="firstname" id="firstname">
+    </section>
+    <section class="form-group">
+      <label for="lastname">Nachname</label>
+      <input type="text" formControlName="lastname" id="lastname">
+    </section>
+  </fieldset>
+  <fieldset formGroupName="father">
+    <legend>Name des Vaters</legend>
+    <input type="hidden" formControlName="id">
+    <section class="form-group">
+      <label for="firstname">Vorname</label>
+      <input type="text" formControlName="firstname" id="firstname">
+    </section>
+    <section class="form-group">
+      <label for="lastname">Nachname</label>
+      <input type="text" formControlName="lastname" id="lastname">
+    </section>
+  </fieldset>
+  <section class="buttons">
+    <input type="submit" value="Speichern" [disabled]="!maySubmit()">
+    <input type="reset" value="Abbrechen" (click)="close.emit()">
+  </section>
+</form>

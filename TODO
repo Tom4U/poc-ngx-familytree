@@ -6,4 +6,4 @@ Next:
     ✔ refactor: Personen im Component Controller definieren @done(22-06-09 13:19)
     ✔ refactor: Personen als Schleife im Template (View) ausgeben @done(22-06-09 13:19)
     ✔ refactor: AppComponent in unterschiedliche Components umbauen @done(22-06-10 13:51)
-    ☐ feature(form): Möglichkeit schaffen neue Verwandte hinzuzufügen
+    ✔ feature(form): Möglichkeit schaffen neue Verwandte hinzuzufügen @done(22-06-13 12:31)
